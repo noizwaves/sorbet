@@ -1,6 +1,11 @@
 #!/bin/bash
 
 set -euo pipefail
+# debug is handy
+set -x
+
+# clean up after previous attempts
+rm -rf gems/sorbet-static/libexec
 
 export JOB_NAME=build-static-release
 source .buildkite/tools/setup-bazel.sh
